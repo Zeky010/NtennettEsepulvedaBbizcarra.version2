@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>pelicula List</h1>
+
+    {% if pelicula_list %}
+    <ul>
+
+      {% for pelicula in pelicula_list %}
+      <li>
+        <a href="{{ pelicula.get_absolute_url }}">{{ pelicula.nombre_pelicula }}</a> ({{pelicula.autor}})
+      </li>
+      {% endfor %}
+
+    </ul>
+
+    {% else %}
+      <p>There are no peli in the library.</p>
+    {% endif %}       
+{% endblock %}
