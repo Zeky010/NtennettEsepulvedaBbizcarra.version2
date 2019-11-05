@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<h1>Author: {{ Autor }} </h1>
+<p>{nombre_author}</p>
+
+<div style="margin-left:20px;margin-top:20px">
+<h4>peliculas</h4>
+
+<dl>
+{% for pelicula in Autor.pelicula_set.all %}
+  <dt><a href="{% url 'pelicula-detail' pelicula.pk %}">{{pelicula}}</a> ({{pelicula.peliculainstance_set.all.count}})</dt>
+  <dd>{{pelicula.summary}}</dd>
+{% endfor %}
+</dl>
+
+</div>
+{% endblock %}

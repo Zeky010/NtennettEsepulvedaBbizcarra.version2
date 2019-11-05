@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from .models import usuario, Autor, Genre, pelicula, PeliculaInstance
 from django.views import generic
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
 # Create your views here.
 
 def index(request):
@@ -26,3 +28,16 @@ class peliculaDetailView(generic.DetailView):
 
 class autorDetailView(generic.DetailView):
     model = Autor
+
+class autorCreate(CreateView):
+    model = Autor
+    fields = '__all__'
+
+
+class autorUpdate(UpdateView):
+    model = Autor
+    fields = ['nombre_author']
+
+class autorDelete(DeleteView):
+    model = Autor
+    success_url = reverse_lazy('')
