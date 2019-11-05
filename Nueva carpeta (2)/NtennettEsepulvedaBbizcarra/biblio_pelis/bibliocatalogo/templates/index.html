@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   
+    <script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+    <script type="text/javascript" src="js/effects.js"></script>
+    <script>
+    function validarBuscar(){
+      var x = document.getElementById('buscar').value;
+
+      if(x == "" || x.length == 0 || /^\s+$/.test(x)){
+        alert('Digite una el nombre de un pelicula para la busqueda');
+        return false;
+      }
+
+      return true;
+    }
+    
+    </script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+
+
+
+    <title>BiblioPelis!</title>
+  </head>
+
+
+  <body>
+      <header>
+          <h1 style="margin:10px;font-family: sans-serif">Estrenos</h1>
+      </header>
+     
+      <nav id="menu" class="navbar navbar-expand-lg navbar-light bg-light">
+            <a id="inicio" class="navbar-brand" href="index.html">Inicio</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                 
+                </li>
+                <li class="nav-item">
+                  <a  id="login" class="nav-link" href="iniciosesion.html">Inicio sesion</a>
+                </li>
+				<li class="nav-item">
+                  <a id="registro" class="nav-link" href="registro.html">Registro</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Categorias
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="index.html">Estrenos</a>
+                    <a class="dropdown-item" href="peliculas.html">Peliculas</a>
+                    <a class="dropdown-item" href="series.html">Series</a>
+                    <a class="dropdown-item" href="netflix.html">Netflix</a>
+                  </div>
+                </li>
+               
+              </ul>
+              <form class="form-inline my-2 my-lg-0" onsubmit="return validarBuscar()">
+                <input id="buscar" class="form-control mr-sm-2" type="search" placeholder="Peliculas" aria-label="Search" >
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" >Buscar</button>
+              </form>
+            </div>
+          </nav>
+
+          <div style="margin: 10px" class="media">
+                <img src="https://image.tmdb.org/t/p/w154/9uwvUzb6SxTdci5tmDL1jEvkiff.jpg" class="mr-3" alt="">
+                <div style="text-align: justify" class="media-body">
+                  <h5  class="mt-0">Mascotas 2</h5>
+                  Secuela de la película de animación Mascotas, que contaba la historia de Max, 
+                  un perro que adora a su dueña Katie y la vida que llevan juntos, pero que tiene 
+                  que aprender a lidiar con la nueva mascota de la casa, un mestizo torpe y descuidado 
+                  llamado Duke. Dirigida por Chris Renaud (Gru. Mi villano favorito) y escrita por 
+                  Brian Lynch (El gato con botas, Los minions) y Ken Daurio (Gru, mi villano favorito, 
+                  Mascotas), esta cinta de animación narrará de nuevo qué hacen exactamente nuestros 
+                  animales de compañía cuando salimos por la puerta de casa. <br>
+                  <a href="https://xdede.co/peliculas/p412117-ver-mascotas-2-online" target="blank">Ver pelicula</a> 
+                </div> 
+              </div> <br>
+
+          <div style="margin: 10px" class="media">
+                <img src="https://image.tmdb.org/t/p/w154/4MMNGmqiZZmv5i9avDKO1pRvnea.jpg" class="mr-3" alt="">
+                <div style="text-align: justify" class="media-body">
+                  <h5 class="mt-0">Fast & Furious: HOBBS & SHAW</h5>
+                  Luke Hobbs (Dwayne Johnson) y Deckard Shaw (Jason Statham) vuelven a la carga 
+                  para vivir una nueva aventura en la que ellos dos serán los protagonistas absolutos. 
+                  Su rivalidad y la gran química entre estos dos personajes del universo 
+                  Fast & Furious serán la clave de esta nueva historia en la que deberán trabajar 
+                  juntos si quieren pararle los pies al villano Brixton (Idris Elba). Además, 
+                  a la pareja de protagonistas se les unirá un nuevo personaje, Hattie (Vanessa Kirby), 
+                  la hermana de Shaw. <br>
+                  <a href="https://xdede.co/peliculas/p384018-ver-fast-furious-hobbs-shaw-online" target="blank">Ver pelicula</a>
+                </div>
+              </div> <br>
+
+              <div style="margin: 10px" class="media">
+                    <img src="https://image.tmdb.org/t/p/w154/6R75Dl3ks0DbV5OD2ERAoPfCEHu.jpg" class="mr-3" alt="">
+                    <div style="text-align: justify" class="media-body">
+                      <h5 class="mt-0">Toy Story 4 </h5>
+                      Woody siempre ha tenido claro cuál es su labor en el mundo y cuál es su 
+                      prioridad: cuidar a su dueño, ya sea Andy o Bonnie. Sin embargo, Woody 
+                      descubrirá lo grande que puede ser el mundo para un juguete cuando Forky se 
+                      convierta en su nuevo pelisonline.co compañero de habitación. Los juguetes 
+                      se embarcarán en una aventura de la que no se olvidarán jamás. <br>
+                      <a href="https://xdede.co/peliculas/p301528-ver-toy-story-4-online" target="blank">Ver pelicula</a>
+                    </div>
+                  </div> <br>
+
+                  <div style="margin: 10px" class="media">
+                        <img src="https://image.tmdb.org/t/p/w154/iKVR1ba3W1wCm9bVCcpnNvxQUWX.jpg" class="mr-3" alt="">
+                        <div style="text-align: justify" class="media-body">
+                          <h5 class="mt-0">Spider Man: Lejos de casa</h5>
+                          Peter Parker decide irse junto a Michelle Jones, Ned y el resto de sus 
+                          amigos a pasar unas vacaciones a Europa después de los eventos ocurridos 
+                          en Vengadores: EndGame. Sin embargo, el plan de Parker por dejar de lado 
+                          sus superpoderes durante unas semanas se ven truncados cuándo es reclutado 
+                          por Nick Fury para unirse a Mysterio (un humano que proviene de la Tierra 
+                          833, una dimensión del Multiverso, que tuvo su primera aparición en Doctor 
+                          Strange) para luchar contra los Elementales (cuatro entes inmortales que 
+                          vienen de la misma dimensión y que dominan los cuatro elementos de la 
+                          Naturaleza, el fuego, el agua, el aire y la tierra) . En ese momento, 
+                          Parker vuelve a ponerse el traje de Spider-Man para cumplir con su labor. <br>
+                          <a href="https://xdede.co/peliculas/p429617-ver-spider-man-lejos-de-casa-online" target="blank">Ver pelicula</a>
+                        </div>
+                      </div>
+
+
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body> 
+  
+
+
+  <div>
+  <footer style="margin: 10px">
+      &COPY;
+      <a href="mailto:bibliopelis@gmail.com">Contactenos</a>
+  </footer>
+</div>
+</html>

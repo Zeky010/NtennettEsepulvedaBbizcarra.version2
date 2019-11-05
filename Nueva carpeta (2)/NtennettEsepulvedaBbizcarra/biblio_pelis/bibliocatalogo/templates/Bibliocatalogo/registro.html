@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		<title>Registro</title>
+		<link rel="stylesheet" type="text/css" href="css/estilos.css">
+		<script>
+				function validarNombre(){
+					var x = document.getElementById('nombre').value;
+					console.log(x);
+					if(x == null || x.length == 0 || /^\s+$/.test(x)){
+						alert('ERROR: Ingrese información en Nombre ');
+						document.registro.nombre.focus();
+						return false;
+					} else{
+						return true;
+					}
+				}
+			
+				function validarApellido(){
+					var x = document.getElementById('apellido').value;
+			
+					if(x == null || x.length == 0 || /^\s+$/.test(x)){
+						alert('ERROR: Ingrese información en Apellido ');
+						document.registro.apellido.focus();
+						return false;
+					} else{
+						return true;
+					}
+				}
+				function validarCorreo(){
+					var x = document.getElementById('correo').value;
+					var emailFilter = /\S+@\S+\.\S+/; //validador;
+			
+					if(!(emailFilter.test(x))){ //valida la existencia de los caracteres dentro de "emailFilter" en "x"
+						alert('ERROR: Debe escribir un correo válido');
+						document.registro.correo.value="";
+						document.registro.correo.focus();
+						return false;
+					}
+					else{
+						return true;
+					}
+				}
+			
+				function validarContraseña(){
+					var x= document.getElementById('password').value;
+					if(x==""){
+						alert('ERROR: Debe Ingresar una contraseña');
+						document.registro.password.focus();
+						return false;
+					}
+					else{
+					return true;
+					}
+				}
+			
+			//validar "Aceptar terminos de servicio"
+			function validarTerminos(){
+				
+				var x = document.getElementById("tos");
+				//console.log(x.value);
+				if(x.checked=="1") {
+			
+					return true;
+				}
+				else {
+					alert("Es nesesario aceptar los terminos de servicio para registrarse");
+					return false;
+				}
+			}
+			
+			//validar la fecha de nacimiento
+				function validarFecha(){	
+					var x = document.getElementById('fecha').value;
+					//console.log(x);
+					if(!x){
+						alert('ERROR: Debe elegir una fecha');
+						document.registro.fecha.focus();
+						return false;
+					}
+					else{
+						return true;
+					}
+				}
+				function validarFormulario(){
+					
+					//Test campos obligatorio
+					if(!validarNombre()){
+						return false;
+					}
+			
+					if(!validarApellido()){
+						return false;
+					}
+			
+					if(!validarCorreo()){
+						return false;
+					}
+			
+					if(!validarContraseña()){
+						return false;
+					}
+			
+					
+				
+					if(!validarTerminos()){
+						return false;
+					}
+			
+					return true;
+			
+				}
+			</script>
+</head>
+
+<body>
+
+	<div id="card">	
+			<form  name="registro" action="respuesta.html" onsubmit="return validarFormulario()" method="POST">
+				
+				<h1>Regístrate  </h1>
+				<input type="text" id="nombre" name="nombre" placeholder="Nombre.." />
+				<input type="text" id="apellido" name="apellido" placeholder="Apellido.." />
+				<input type="text" id="correo" name="mail" placeholder="Correo electrónico.." />
+				<input type="password" id="password" name="password"  placeholder="Contraseña.." minlength=10 /><br>
+			
+				<label id="fn" for="fecha">Fecha de nacimiento</label>
+				<input type="date" id="fecha" name="fecha" min="1950-01-01" max="2019-09-09">
+				
+			<input type="checkbox" id="tos" name="tos" value="1" />
+			<label class="lbl" for="tos">Aceptas los <a href="">Terminos de servicios</a></label>
+			<input type="checkbox" id="news" name="news">
+			<label class="lbl" for="news">¡Subscribete a nuevas noticias!</label>
+			
+		<!--  // // // // // // // // // //  -->
+		
+			<input type="submit" id="submit" name="Registrar"/>
+			
+			</form>
+			<form action="https://www.facebook.com">
+			<input type="submit" id="submitfb" name="submit" value=" Facebook"/>
+			</form>
+			<form action="https://twitter.com">
+				<input type="submit" id="submittw" name="submit" value=" Twitter"/>
+			</form>
+		</div>
+
+
+</body>
+</html>
+
+<!--//<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
