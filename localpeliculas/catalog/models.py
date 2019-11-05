@@ -32,7 +32,7 @@ class Autor(models.Model):
 		return self.nombre_author
 	
 	def get_absSolute_url(self):
-		return reverse('author-detail', args=[str(self.nombre_author)])
+		return reverse('autor-detail', args=[str(self.nombre_author)])
 	
 
 

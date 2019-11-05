@@ -20,5 +20,9 @@ def index(request):
 class peliculaListView(generic.ListView):
     model = pelicula
     paginate_by = 10
+
 class peliculaDetailView(generic.DetailView):
     model = pelicula
+
+class autorDetailView(generic.DetailView):
+    model = Autor
