@@ -8,7 +8,7 @@ urlpatterns=[
     path('autor/<int:pk>', views.autorDetailView.as_view(),name='autor-detail'),
 ]
 
-
+#+= es sumar
 urlpatterns += [
     path('autor/create/', views.autorCreate.as_view(), name='autor_create'),
     path('autor/<int:pk>/update/', views.autorUpdate.as_view(), name='autor_update'),
