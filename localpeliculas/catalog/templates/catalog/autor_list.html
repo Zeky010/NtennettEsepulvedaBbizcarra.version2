@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Lista autores</h1>
+
+    {% if autor_list %}
+    <ul>
+
+      {% for Autor in autor_list %}
+      <li>
+        <a href="{{ Autor.get_absolute_url }}">{{ Autor.nombre_author }}</a> {{pelicula.autor}}
+      </li>
+      {% endfor %}
+
+    </ul>
+
+    {% else %}
+      <p>There are no peli in the library.</p>
+    {% endif %}       
+{% endblock %}

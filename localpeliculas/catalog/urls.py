@@ -16,4 +16,5 @@ urlpatterns += [
     path('autor/create/', views.autorCreate.as_view(), name='autor_create'),
     path('autor/<int:pk>/update/', views.autorUpdate.as_view(), name='autor_update'),
     path('autor/<int:pk>/delete/', views.autorDelete.as_view(), name='autor_delete'),
+    path('autores/',views.autorListView.as_view(),name='autores'),
 ]

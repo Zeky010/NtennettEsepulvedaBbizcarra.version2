@@ -9,6 +9,7 @@
 <form action="" method="POST">
   {% csrf_token %}
   <input type="submit" action="" value="Yes, delete." />
+  <input  type="button" action="" value="Cancelar" onClick="{% url 'index' %}" />
 </form>
 
 {% endblock %}

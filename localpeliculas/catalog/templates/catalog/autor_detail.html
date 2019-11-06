@@ -3,7 +3,7 @@
 {% block content %}
 
 <h1>Author: {{ Autor }} </h1>
-<p>{nombre_author}</p>
+<p>{{ autor.nombre_author }}</p>
 
 <div style="margin-left:20px;margin-top:20px">
 <h4>peliculas</h4>
@@ -14,6 +14,15 @@
   <dd>{{pelicula.summary}}</dd>
 {% endfor %}
 </dl>
+
+
+
+</div>
+
+<div style="margin-left:20px;margin-top:20px">
+<a style="padding=30px" href="delete/">Eliminar</a>
+<a href="update/">Actualizar</a>
+
 
 </div>
 {% endblock %}
