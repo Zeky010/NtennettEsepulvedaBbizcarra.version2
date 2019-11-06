@@ -1,15 +1,15 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-<h1>agregar pelicular</h1>
+<h1>Eliminar pelicula</h1>
 
   <p>bienvenido <em>a bibliopelis</em>, Django website </p>
 
 <form action="." method="post">
     {% csrf_token %}
-    <p>Are you sure you want to delete "{{ pelicula }}"?</p>
+    <p>Esta seguro que desea eliminar la pelicula "{{ pelicula }}"?</p>
     <div>
-        <input type="submit" value="Confirm" />
+        <input type="submit" value="Aceptar" />
     </div>
 </form>
 {% endblock %}
