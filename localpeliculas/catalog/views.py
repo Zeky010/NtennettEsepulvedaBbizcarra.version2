@@ -21,7 +21,7 @@ def index(request):
     )
 
 class peliculaCreateView(CreateView):
-    modelr=pelicula
+    model=pelicula
     fields = '__all__'
 
 class peliculaListView(generic.ListView):
