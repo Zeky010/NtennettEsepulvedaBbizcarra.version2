@@ -2,23 +2,18 @@
 
 {% block content %}
 
-<h1>Title: {{ pelicula.nombre_pelicula }}</h1>
-
-<p><strong>Autor:</strong> <a href="{% url 'autor-detail' pelicula.autor.pk %}">{{ pelicula.autor }}</a></p>
-<p><strong>Summary:</strong> {{ pelicula.summary }}</p>
-<p><strong>Lenguaje:</strong></p>  
-<p><strong>Genre:</strong> {{ pelicula.genre.all|join:", " }}</p>
+<h1>Titulo: {{ pelicula.nombre_pelicula }}</h1>
+<div style="border-style: solid;">
+    <p><strong>Autor:</strong> <a href="{% url 'autor-detail' pelicula.autor.pk %}">{{ pelicula.autor }}</a></p>
+    <p><strong>Summary:</strong> {{ pelicula.summary }}</p>
+    <p><strong>Lenguaje:</strong></p>  
+    <p><strong>Genre:</strong> {{ pelicula.genre.all|join:", " }}</p>
+</div>
 
 <div style="margin-left:20px;margin-top:20px">
-<h4>Copies</h4>
+<a style="padding=30px" href="delete/">Eliminar</a>
+<a href="update/">Actualizar</a>
 
-{% for copy in book.bookinstance_set.all %}
-<hr>
-<p class="{% if copy.status == 'a' %}text-success{% elif copy.status == 'd' %}text-danger{% else %}text-warning{% endif %}">{{ copy.get_status_display }}</p>
-{% if copy.status != 'e' %}<p><strong>Due to be returned:</strong> {{copy.due_back}}</p>{% endif %}
-<p><strong>Imprint:</strong> {{copy.imprint}}</p>
-<p class="text-muted"><strong>Id:</strong> {{copy.id}}</p>
 
-{% endfor %}
 </div>
 {% endblock %}

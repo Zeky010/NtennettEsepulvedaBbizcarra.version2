@@ -38,7 +38,7 @@ class peliculaUpdate(UpdateView):
     
 class peliculaDelete(DeleteView):
     model=pelicula
-
+    success_url = reverse_lazy('peliculas')
     
 class autorDetailView(generic.DetailView):
     model = Autor
@@ -46,6 +46,10 @@ class autorDetailView(generic.DetailView):
 class autorCreate(CreateView):
     model = Autor
     fields = '__all__'
+    
+class autorListView(generic.ListView):
+    model = Autor
+    paginate_by = 10
 
 
 class autorUpdate(UpdateView):
@@ -54,4 +58,4 @@ class autorUpdate(UpdateView):
 
 class autorDelete(DeleteView):
     model = Autor
-    success_url = reverse_lazy('')
+    success_url = reverse_lazy('index')
