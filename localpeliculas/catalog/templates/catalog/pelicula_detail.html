@@ -4,7 +4,11 @@
 
 <h1>Titulo: {{ pelicula.nombre_pelicula }}</h1>
 <div style="border-style: solid;">
-    <p><strong>Autor:</strong> <a href="{% url 'autor-detail' pelicula.autor.pk %}">{{ pelicula.autor }}</a></p>
+    {% if pelicula.autor %}
+        <p><strong>Autor:</strong> <a href="{% url 'autor-detail' pelicula.autor.pk %}">{{ pelicula.autor }}</a></p>
+    {% else %}
+        <p><strong>Autor:</strong> Desconocido.</p>
+    {% endif %}%}
     <p><strong>Summary:</strong> {{ pelicula.summary }}</p>
     <p><strong>Lenguaje:</strong></p>  
     <p><strong>Genre:</strong> {{ pelicula.genre.all|join:", " }}</p>

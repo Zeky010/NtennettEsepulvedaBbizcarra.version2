@@ -2,19 +2,34 @@
 
 {% block content %}
     <h1>pelicula List</h1>
+    
+    <form method="get" action="{% url 'peliculas' %}">
+      
+      <select name="browse">
+        {% for Genre in Genre.objects.all %}
 
-    {% if pelicula_list %}
-    <ul>
+          <option value={{ Genre }} name={{ Genre.name }}>{{ Genre.name }}</option>
+         
+        {% endfor %} 
+        
+      </select>
+      <p><input type="submit" name="submit" value="submit"/></p>
 
-      {% for pelicula in pelicula_list %}
-      <li>
-        <a href="{{ pelicula.get_absolute_url }}">{{ pelicula.nombre_pelicula }}</a> ({{pelicula.autor}})
-      </li>
-      {% endfor %}
 
-    </ul>
+      {% if pelicula_list %}
+      <ul>
 
-    {% else %}
-      <p>There are no peli in the library.</p>
-    {% endif %}       
+        {% for pelicula in pelicula_list %}
+        <li>
+          <a href="{{ pelicula.get_absolute_url }}">{{ pelicula.nombre_pelicula }}</a> ({{pelicula.autor}})
+        </li>
+        {% endfor %}
+
+      </ul>
+
+        {% else %}
+          <p>There are no peli in the library.</p>
+      {% endif %} 
+
+    </form>      
 {% endblock %}

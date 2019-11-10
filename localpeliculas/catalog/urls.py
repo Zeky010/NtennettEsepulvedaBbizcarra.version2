@@ -17,4 +17,8 @@ urlpatterns += [
     path('autor/<int:pk>/update/', views.autorUpdate.as_view(), name='autor_update'),
     path('autor/<int:pk>/delete/', views.autorDelete.as_view(), name='autor_delete'),
     path('autores/',views.autorListView.as_view(),name='autores'),
+    path('usuario/create/',views.usuarioCreateView.as_view(), name='usuario_create'),
+    path('usuarios/', views.usuarioListView.as_view(), name='usuario_list'),
+    path('usuario/<int:pk>/',views.usuarioDetailView.as_view(), name='usuario-detail'),
+
 ]

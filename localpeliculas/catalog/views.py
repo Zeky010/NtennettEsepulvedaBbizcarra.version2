@@ -3,7 +3,10 @@ from .models import usuario, Autor, Genre, pelicula, PeliculaInstance
 from django.views import generic
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
-from dataclasses import fields
+from dataclasses import fields, field
+from django.contrib.messages.api import success
+from pyexpat import model
+
 # Create your views here.
 
 def index(request):
@@ -27,7 +30,12 @@ class peliculaCreateView(CreateView):
 class peliculaListView(generic.ListView):
     model = pelicula
     paginate_by = 10
+   
 
+
+
+
+    
 class peliculaDetailView(generic.DetailView):
     model = pelicula
 
@@ -58,4 +66,23 @@ class autorUpdate(UpdateView):
 
 class autorDelete(DeleteView):
     model = Autor
-    success_url = reverse_lazy('index')
+    success_url = reverse_lazy('autores')
+    
+class usuarioCreateView(CreateView):
+    model = usuario
+    fields = '__all__'
+
+class usuarioDetailView(generic.DetailView):
+    model = usuario
+
+class usuarioListView(generic.ListView):
+    model = usuario
+    paginate_by = 15
+    
+class usuarioUpdate(UpdateView):
+    model = usuario
+    fields = ['nombre', 'password', 'email']
+
+class usuarioDelete(DeleteView):
+    model = usuario
+    success_url = reverse_lazy('usuarios')

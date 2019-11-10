@@ -1,11 +1,13 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-<h1>Eliminar pelicula</h1>
+<h1>Eliminar Usuario</h1>
+
   <p>bienvenido <em>a bibliopelis</em>, Django website </p>
+
 <form action="." method="post">
     {% csrf_token %}
-    <p>Esta seguro que desea eliminar la pelicula "{{ pelicula }}"?</p>
+    <p>Esta seguro que desea eliminar el usuario "{{ usuario }}"?</p>
     <div>
         <input type="submit" value="Aceptar" />
     </div>

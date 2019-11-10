@@ -21,6 +21,9 @@ class usuario(models.Model):
 
 class Genre(models.Model):
 	name = models.CharField(max_length=200)
+
+	def get_absolute_url(self):
+		return reverse('genre-detail', args=[str(self.id)])
 	def __str__(self):
 		return self.name
 	
