@@ -33,8 +33,6 @@ class peliculaListView(generic.ListView):
    
 
 
-
-
     
 class peliculaDetailView(generic.DetailView):
     model = pelicula
@@ -50,7 +48,7 @@ class peliculaDelete(DeleteView):
     
 class autorDetailView(generic.DetailView):
     model = Autor
-
+    
 class autorCreate(CreateView):
     model = Autor
     fields = '__all__'

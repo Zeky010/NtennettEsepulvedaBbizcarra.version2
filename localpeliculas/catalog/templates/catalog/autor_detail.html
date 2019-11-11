@@ -2,27 +2,27 @@
 
 {% block content %}
 
-<h1>Author: {{ Autor }} </h1>
-<p>{{ autor.nombre_author }}</p>
-
-<div style="margin-left:20px;margin-top:20px">
-<h4>Autor</h4>
-
-<dl>
-{% for pelicula in Autor.pelicula_set.all %}
-  <dt><a href="{% url 'pelicula-detail' pelicula.pk %}">{{pelicula}}</a> ({{pelicula.peliculainstance_set.all.count}})</dt>
-  <dd>{{pelicula.summary}}</dd>
-{% endfor %}
-</dl>
-
-
-
-</div>
-
-<div style="margin-left:20px;margin-top:20px">
-<a style="padding=30px" href="delete/">Eliminar</a>
-<a href="update/">Actualizar</a>
-
-
-</div>
+    <h1>Author: {{ Autor }} </h1>
+    <p>{{ autor.nombre_author }}</p>
+    
+    <div style="margin-left:20px;margin-top:20px">
+    <h4>Peliculas de autor</h4>
+    
+    <dl>
+    {% for pelicula in list %}
+      <dt><a href="{{ pelicula.get_absolute_url }}">{{ pelicula.nombre_pelicula }}</a></dt>
+      <dd>{{pelicula.summary}}</dd>
+    {% endfor %}
+    </dl>
+    
+    
+    
+    </div>
+    
+    <div style="margin-left:20px;margin-top:20px">
+    <a style="padding=30px" href="delete/">Eliminar este autor</a>
+    <a href="update/">Actualizar este autor</a>
+    
+    
+    </div>
 {% endblock %}
