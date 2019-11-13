@@ -21,16 +21,13 @@
   <div class="col-sm-2">
     {% block sidebar %}
     <ul class="sidebar-nav">
-        <li><a href="{% url 'index' %}">Home</a></li><br>
-		<li><a href="{% url 'pelicula-create' %}">Añadir Pelicula</a></li>
-        <li><a href="{% url 'peliculas' %}">Todas las peliculas</a></li> <br>
-		
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'peliculas' %}">Todas las peliculas</a></li>
+        <li><a href="{% url 'pelicula-create' %}">Añadir Pelicula</a></li>
         <li><a href="{% url 'autor_create' %}">Añadir autor</a></li>
-        <li><a href="{% url 'autores' %}">Todos los autores</a></li><br>
-		
-		<li><a href="{% url 'usuario_create' %}">Agregar usuario</a></li>
+        <li><a href="{% url 'autores' %}">Todos los autores</a></li>
         <li><a href="{% url 'usuario_list' %}">Todos los usuarios del sitio</a></li>
-		
+
 
 
     </ul>

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import usuario, Autor, Genre, pelicula, PeliculaInstance
+from .models import usuario, Autor, Genero, pelicula
 from django.views import generic
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
@@ -11,16 +11,12 @@ from pyexpat import model
 
 def index(request):
     num_pelis = pelicula.objects.all().count()
-    num_instaces = PeliculaInstance.objects.all().count()
-
-    num_instaces_available = PeliculaInstance.objects.filter(status__exact='a').count()
     num_autores=Autor.objects.count()
 
     return render(
         request,
         'index.html',
-        context={'num_pelis':num_pelis,'num_instances':num_instaces,
-        'num_instances_available':num_instaces_available,'num_autores':num_autores},
+        context={'num_pelis':num_pelis, 'num_autores':num_autores},
     )
 
 class peliculaCreateView(CreateView):

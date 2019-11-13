@@ -19,11 +19,11 @@ class usuario(models.Model):
 
 		return self.nombre
 
-class Genre(models.Model):
+class Genero(models.Model):
 	name = models.CharField(max_length=200)
 
 	def get_absolute_url(self):
-		return reverse('genre-detail', args=[str(self.id)])
+		return reverse('genero-detail', args=[str(self.id)])
 	def __str__(self):
 		return self.name
 	
@@ -43,15 +43,15 @@ class pelicula(models.Model):
 
 	nombre_pelicula = models.CharField(max_length=200)
 	autor = models.ForeignKey('Autor',on_delete=models.SET_NULL,null=True)
-	summary = models.TextField(max_length=1000,help_text='Ingrese informacion de la pelicula')
-	genre = models.ManyToManyField(Genre)
+	descripcion = models.TextField(max_length=1000,help_text='Ingrese informacion de la pelicula')
+	genero = models.ManyToManyField(Genero)
 
 	def __str__(self):
 		return self.nombre_pelicula
 
 	def get_absolute_url(self):
 		return reverse("pelicula-detail", args=[str(self.id)])
-	
+"""	
 class PeliculaInstance(models.Model):
 	id = models.UUIDField(primary_key=True,default=uuid.uuid4, help_text= 'id unico de la pelicula')
 	pelicula_inst = models.ForeignKey('pelicula',on_delete=models.SET_NULL, null=True)
@@ -79,3 +79,4 @@ class PeliculaInstance(models.Model):
 	def __str__(self):
 		return f'{self.id} ({self.pelicula_inst.nombre_pelicula})'
 	
+"""

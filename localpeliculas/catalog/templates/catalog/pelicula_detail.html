@@ -9,8 +9,9 @@
     {% else %}
         <p><strong>Autor:</strong> Desconocido.</p>
     {% endif %}
-    <p><strong>Descripcion:</strong> {{ pelicula.summary }}</p> 
-    <p><strong>Genero:</strong> {{ pelicula.genre.all|join:", " }}</p>
+    <p><strong>Descrpcion:</strong> {{ pelicula.descripcion }}</p>
+    <p><strong>Lenguaje:</strong></p>  
+    <p><strong>Genero:</strong> {{ pelicula.genero.all|join:", " }}</p>
 </div>
 
 <div style="margin-left:20px;margin-top:20px">

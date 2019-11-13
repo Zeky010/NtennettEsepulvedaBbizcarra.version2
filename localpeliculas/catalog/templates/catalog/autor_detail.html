@@ -3,13 +3,14 @@
 {% block content %}
 
     <h1>Author: {{ Autor }} </h1>
-    <p>{{ autor.nombre_author }}</p>
+    <p>{{ Autor.nombre_author }}</p>
     
     <div style="margin-left:20px;margin-top:20px">
     <h4>Peliculas de autor</h4>
     
     <dl>
-    {% for pelicula in list %}
+    {% for pelicula in pelicula.objects.filter(autor = Autor.nombre_autor) %}
+
       <dt><a href="{{ pelicula.get_absolute_url }}">{{ pelicula.nombre_pelicula }}</a></dt>
       <dd>{{pelicula.summary}}</dd>
     {% endfor %}
