@@ -80,3 +80,31 @@ class usuarioUpdate(UpdateView):
 class usuarioDelete(DeleteView):
     model = usuario
     success_url = reverse_lazy('usuarios')
+    
+    
+
+def peliculaBuscar (request):
+    listaP = pelicula.objects.all()
+    ListaA = Autor.objects.all()
+    estado=''
+    if request.method == 'POST':
+        try:
+            estado = 'SEARCH'
+            nomAutor = str(request.POST.get('nombre_author'))
+            autorP = Autor.objects.filter(nombre_author == nomAutor)
+            listaP = pelicula.objects.filter(autor == autorP)
+
+            """
+            buscar = str(pelicula.values_list('autor.nombre_author').filter(autor.nombre_author = nomAutor))
+            if  buscar.find(nomAutor):
+                listaP = pelicula.objects.filter(autor.nombre_author = nomAutor)
+            else:
+                listaP = pelicula.objects.all()"""
+        except:
+
+            estado = 'NOTSEARCH'
+
+    variables = {'status': estado,
+                'listaP': listaP}
+    
+    return render (request, 'catalog/pelicula_por_autor.html', variables)

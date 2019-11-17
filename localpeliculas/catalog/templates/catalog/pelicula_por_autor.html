@@ -1,0 +1,16 @@
+{% block content %}
+    <p>{{ status }}</p>
+    {% if listaP is not None  %}
+    <h2>peliculas </h2>   
+        {% for p in listaP %}
+            <li>{{ p.nombre_pelicula }}</li> 
+        {% endfor %} 
+    {% endif %}
+
+    <form method="POST" action="">
+        <h2>Ingrese Director</h2>
+        {% csrf_token %}
+        <input type="text" nome="nombre_autor">
+        <input type="submit" value="filtrar"> 
+    </form>
+{% endblock %}

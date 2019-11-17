@@ -2,24 +2,12 @@
 
 {% block content %}
 
-    <h1>Author: {{ Autor }} </h1>
+    <h1>Autor: {{ Autor }} </h1>
     <p>{{ Autor.nombre_author }}</p>
+    {{ Autor.nombre_author }}
     
     <div style="margin-left:20px;margin-top:20px">
-    <h4>Peliculas de autor</h4>
-    
-    <dl>
-    {% for pelicula in pelicula.objects.filter(autor = Autor.nombre_autor) %}
 
-      <dt><a href="{{ pelicula.get_absolute_url }}">{{ pelicula.nombre_pelicula }}</a></dt>
-      <dd>{{pelicula.summary}}</dd>
-    {% endfor %}
-    </dl>
-    
-    
-    
-    </div>
-    
     <div style="margin-left:20px;margin-top:20px">
     <a style="padding=30px" href="delete/">Eliminar este autor</a>
     <a href="update/">Actualizar este autor</a>
