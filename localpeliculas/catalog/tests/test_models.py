@@ -8,6 +8,7 @@ def usuarioInstTest():
     user = usuario.objects.create(nombre='Comparini', password='pass', email='comparini@citytour.cl')
     return user
 
+
 def PeliculaInstTest():
     pel = pelicula.objects.create(nombre_pelicula='Battletruck', descripcion=' Something')
     return pel
