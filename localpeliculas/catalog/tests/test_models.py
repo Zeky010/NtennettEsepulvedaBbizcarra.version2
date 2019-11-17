@@ -4,6 +4,7 @@ from catalog.models import Autor, usuario, pelicula
 
 
 def usuarioInstTest():
+    print='hola'
     user = usuario.objects.create(nombre='Comparini', password='pass', email='comparini@citytour.cl')
     return user
 

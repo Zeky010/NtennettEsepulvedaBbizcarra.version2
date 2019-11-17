@@ -1,16 +1,14 @@
 {% block content %}
     <p>{{ status }}</p>
-    {% if listaP is not None  %}
-    <h2>peliculas </h2>   
-        {% for p in listaP %}
-            <li>{{ p.nombre_pelicula }}</li> 
+    <h2>Listado Autor </h2>   
+        {% for p in ListaA %}
+            <li>{{ p.nombre_author }}</li> 
         {% endfor %} 
-    {% endif %}
 
-    <form method="POST" action="">
+
+    <form method="POST">{% csrf_token %}
         <h2>Ingrese Director</h2>
-        {% csrf_token %}
-        <input type="text" nome="nombre_autor">
-        <input type="submit" value="filtrar"> 
+        <input type="text" nome="nombre_author" id="nombre_author">
+        <button type="submit" name="submit">Buscar</button>
     </form>
 {% endblock %}

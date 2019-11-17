@@ -83,28 +83,23 @@ class usuarioDelete(DeleteView):
     
     
 
-def peliculaBuscar (request):
+def pelicula_por_autor(request):
+    status = 'NOSEARCH'
+    listaA = Autor.objects.all()
     listaP = pelicula.objects.all()
-    ListaA = Autor.objects.all()
-    estado=''
+
     if request.method == 'POST':
+        valor_campo = request.POST.get('nombre_author')
         try:
-            estado = 'SEARCH'
-            nomAutor = str(request.POST.get('nombre_author'))
-            autorP = Autor.objects.filter(nombre_author == nomAutor)
-            listaP = pelicula.objects.filter(autor == autorP)
-
-            """
-            buscar = str(pelicula.values_list('autor.nombre_author').filter(autor.nombre_author = nomAutor))
-            if  buscar.find(nomAutor):
-                listaP = pelicula.objects.filter(autor.nombre_author = nomAutor)
-            else:
-                listaP = pelicula.objects.all()"""
+            if Autor.objects.all().filter(nombre_author = valor_campo).exists() == True:
+                listaA = Autor.objects.all().filter(nombre_author = valor_campo)
+            else :
+                
+                 listaA = Autor.objects.all()
         except:
-
-            estado = 'NOTSEARCH'
-
-    variables = {'status': estado,
-                'listaP': listaP}
-    
+            status = 'NOSEARCH'
+        
+    variables = {'status': status,
+                 'ListaA': listaA}
     return render (request, 'catalog/pelicula_por_autor.html', variables)
+

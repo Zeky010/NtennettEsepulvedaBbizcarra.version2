@@ -20,5 +20,5 @@ urlpatterns += [
     path('usuario/create/',views.usuarioCreateView.as_view(), name='usuario_create'),
     path('usuarios/', views.usuarioListView.as_view(), name='usuario_list'),
     path('usuario/<int:pk>/',views.usuarioDetailView.as_view(), name='usuario-detail'),
-    path('pl',views.peliculaBuscar, name='pelicula_por_autor')
+    path('pelicula_por_autor/',views.pelicula_por_autor, name='pelicula_por_autor')
 ]
