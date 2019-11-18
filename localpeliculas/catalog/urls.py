@@ -1,5 +1,7 @@
 from django.urls import path
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns=[
     path('',views.index,name='index'),
@@ -22,3 +24,5 @@ urlpatterns += [
     path('usuario/<int:pk>/',views.usuarioDetailView.as_view(), name='usuario-detail'),
     path('pelicula_por_autor/',views.pelicula_por_autor, name='pelicula_por_autor')
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

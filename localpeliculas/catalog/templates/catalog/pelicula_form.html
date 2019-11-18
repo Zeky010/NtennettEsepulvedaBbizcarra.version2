@@ -4,11 +4,15 @@
 
   <p>bienvenido <em> a bibliopelis</em> </p>
 
-<form action="" method="post">
+<form action="" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <table>
         {{ form.as_table }}
     </table>
+    <br>
+    <label>Imagen </label>
+    <input type="file" name="txtImagen" id="txtImagen">
+    </br>
     <input type="submit" value="Registrar" />
     
 </form>

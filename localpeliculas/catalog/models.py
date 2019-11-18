@@ -7,6 +7,7 @@ class usuario(models.Model):
 	nombre=models.CharField(max_length=100)
 	password = models.CharField(max_length=100)
 	email = models.EmailField(max_length=50)
+	
 
 	
 	class Meta:
@@ -45,6 +46,7 @@ class pelicula(models.Model):
 	autor = models.ForeignKey('Autor',on_delete=models.SET_NULL,null=True)
 	descripcion = models.TextField(max_length=1000,help_text='Ingrese informacion de la pelicula')
 	genero = models.ManyToManyField(Genero)
+	imagen = models.ImageField(upload_to='imagen_pelicula',null=True)
 
 	def __str__(self):
 		return self.nombre_pelicula
