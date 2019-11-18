@@ -35,7 +35,7 @@ class peliculaDetailView(generic.DetailView):
 
 class peliculaUpdate(UpdateView):
     model=pelicula
-    fields=['nombre_pelicula', 'autor', 'summary', 'genre']
+    fields=['nombre_pelicula', 'autor', 'descripcion', 'genero']
     
 class peliculaDelete(DeleteView):
     model=pelicula
@@ -55,7 +55,7 @@ class autorListView(generic.ListView):
 
 class autorUpdate(UpdateView):
     model = Autor
-    fields = ['nombre_author']
+    fields = ['nombre_author','apellido_author','descripcion_autor']
 
 class autorDelete(DeleteView):
     model = Autor

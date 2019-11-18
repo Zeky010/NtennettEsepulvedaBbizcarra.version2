@@ -18,7 +18,9 @@
     <div class="contentBox">
     {% for p in list %}
     <!-- aqui en el for pueden colocar atributos  -->
-        <li>{{ p.nombre_author }}</li> 
+        <li>{{ p.nombre_author }} {{p.apellido_author}} {{p.descripcion_autor}}</li> 
+
+
     {% endfor %} 
     </div>
     <br>
