@@ -1,6 +1,5 @@
-from django.test import TestCase
-from catalog.tests import test_models
-from .models import usuario, pelicula
+
+from .models import usuario, pelicula,Autor
 import unittest
 
 
@@ -20,12 +19,21 @@ def test_autor():
     status = True
     try : 
         testeando = Autor.objects.values_list('nombre_author')
-        print(str(testeo))
+        print(str(testeando))
         status = True
     except : 
         status = False
     return testeando
 
+def test_usuario():
+    status = True
+    try : 
+        testeador = usuario.objects.values_list('nombre')
+        print(str(testeador))
+        status = True
+    except : 
+        status = False
+    return testeador
 # class PruebaUsuario(unittest.TestCase):
 
 #     user = test_models.usuarioInstTest
@@ -50,3 +58,6 @@ class prueba_general(unittest.TestCase):
 class prueba_general_autor(unittest.TestCase):
     def testeo_autor(self):
         self.assertTrue(test_autor())
+class prueba_general_usuario(unittest.TestCase):
+    def testeo_usuario(self):
+        self.assertTrue(test_usuario())
