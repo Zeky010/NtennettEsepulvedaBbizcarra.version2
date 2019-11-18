@@ -3,9 +3,6 @@ from .models import usuario, pelicula,Autor
 import unittest
 
 
-def IDusuario():
-    u = usuario.objects.find(id=1)
-
 def test_peli():
     status = True
     try : 
@@ -34,30 +31,13 @@ def test_usuario():
     except : 
         status = False
     return testeador
-# class PruebaUsuario(unittest.TestCase):
 
-#     user = test_models.usuarioInstTest
-#     def Registro(self):
-#         self.assertTrue(self.assertIsInstance(self.user, usuario))
-    
-#     def usuarioPrimero():
-#         self.assertTrue(IDusuario())
-
-# class PruebaPelicula(unittest.TestCase):
-#     def lista_pelicula(self):
-#         self.assertTrue(test_peli())
-#     print = 'hola'
-#     pel = test_models.PeliculaInstTest()
-
-#     def autorSet(self):
-#         self.assertFieldOutput(self.pel.nombre_pelicula)
-
-class prueba_general(unittest.TestCase):
+class prueba_general(unittest.TestCase):#esta prueba realiza una query mostrando las peliculas existentes en la base de datos
     def testeo_pelicula(self):
-        self.assertTrue(test_peli()) #esta prueba realiza una query mostrando las pliculas existentes en la base de datos
-class prueba_general_autor(unittest.TestCase):
+        self.assertTrue(test_peli()) 
+class prueba_general_autor(unittest.TestCase):#esta prueba realiza una query mostrando los autores existentes en la base de datos
     def testeo_autor(self):
         self.assertTrue(test_autor())
-class prueba_general_usuario(unittest.TestCase):
+class prueba_general_usuario(unittest.TestCase):#esta prueba realiza una query mostrando los usuarios existentes en la base de datos
     def testeo_usuario(self):
         self.assertTrue(test_usuario())
