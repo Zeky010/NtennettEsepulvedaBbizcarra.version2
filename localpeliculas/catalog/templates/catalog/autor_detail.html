@@ -1,11 +1,13 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-
+<div class="title">
     <h1>Autor: {{ Autor }} </h1>
     <p>{{ Autor.nombre_author }}</p>
     {{ Autor.nombre_author }}
+</div>
 <dl>
+
 {% comment %} {% for pelicula in Autor.pelicula_set.all %}
   <dt><a href="{% url 'pelicula-detail' pelicula.pk %}">{{pelicula}}</a> ({{pelicula.peliculainstance_set.all.count}})</dt>
   <dd>{{pelicula.summary}}</dd>
@@ -17,8 +19,6 @@
     <div style="margin-left:20px;margin-top:20px">
     <a style="padding=30px" href="delete/">Eliminar este autor</a>
     <a href="update/">Actualizar este autor</a>
-    
-
     
     </div>
 {% endblock %}

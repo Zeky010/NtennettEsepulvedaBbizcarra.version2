@@ -1,15 +1,15 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-
-<h1>Delete Author</h1>
-
-<p>Are you sure you want to delete the author: {{ Autor }}?</p>
-
-<form action="" method="POST">
-  {% csrf_token %}
-  <input type="submit" action="" value="Yes, delete." />
-  <input  type="button" action="" value="Cancelar" onClick="{% url 'index' %}" />
-</form>
-
+<div class="title">
+  <h1>Delete Author</h1>
+</div>
+<p>¿esta seguro que quiere eliminar este autor?: {{ Autor }}?</p>
+<div class="contentBox">
+  <form action="" method="POST">
+    {% csrf_token %}
+    <input type="submit" action="" value="Si, eliminar" />
+    <input  type="button" action="" value="Cancelar" onClick="{% url 'index' %}" />
+  </form>
+</div>
 {% endblock %}

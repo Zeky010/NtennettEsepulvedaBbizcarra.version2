@@ -1,9 +1,10 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-
-<h1>Titulo: {{ pelicula.nombre_pelicula }}</h1>
-<div style="border-style: solid;">
+<div class="title">
+    <h1>Titulo: {{ pelicula.nombre_pelicula }}</h1>
+</div>
+<div class="contentBox">
     {% if pelicula.autor %}
         <p><strong>Autor:</strong> <a href="{% url 'autor-detail' pelicula.autor.pk %}">{{ pelicula.autor }}</a></p>
     {% else %}
@@ -15,9 +16,7 @@
 </div>
 
 <div style="margin-left:20px;margin-top:20px">
-<a style="padding=30px" href="delete/">Eliminar</a>
-<a href="update/">Actualizar</a>
-
-
+    <a style="padding=30px" href="delete/">Eliminar</a>
+    <a href="update/">Actualizar</a>
 </div>
 {% endblock %}

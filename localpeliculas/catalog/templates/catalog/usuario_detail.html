@@ -1,13 +1,13 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-
+<div class="title">
 <h1>Usuario: {{ usuario.nombre }} </h1>
+</div>
 
 
-<div style="margin-left:20px;margin-top:20px">
 
-<div style="border-style: solid;">
+<div class="contentBox">
 
     <p><strong>E-mail: </strong> {{ usuario.email }}</p>
     <p><strong>Password: </strong>{{usuario.password}}</p>  

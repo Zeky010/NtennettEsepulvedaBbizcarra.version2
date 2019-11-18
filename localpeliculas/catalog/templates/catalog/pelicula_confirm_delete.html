@@ -1,13 +1,17 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-<h1>Eliminar pelicula</h1>
-  <p>bienvenido <em>a bibliopelis</em>, Django website </p>
-<form action="." method="post">
-    {% csrf_token %}
-    <p>Esta seguro que desea eliminar la pelicula "{{ pelicula }}"?</p>
-    <div>
-        <input type="submit" value="Aceptar" />
-    </div>
-</form>
+<div class="title">
+  <h1>Eliminar pelicula</h1>
+</div>
+
+<div class="contentBox">
+  <form action="." method="post">
+      {% csrf_token %}
+      <p>Esta seguro que desea eliminar la pelicula "{{ pelicula }}"?</p>
+      <div>
+          <input type="submit" value="Aceptar" />
+      </div>
+  </form>
+</div>
 {% endblock %}

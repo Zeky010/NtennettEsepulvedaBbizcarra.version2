@@ -1,8 +1,11 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-    <h1>Usuario Lista</h1>
 
+  <div class="title">
+    <h1>Usuario Lista</h1>
+  </div>
+  <div class="contentBox">
     {% if usuario_list %}
     <ul>
 
@@ -17,4 +20,5 @@
     {% else %}
       <p>There are no users in the library.</p>
     {% endif %}       
+  </div>
 {% endblock %}
