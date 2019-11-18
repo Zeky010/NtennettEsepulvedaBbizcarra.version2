@@ -3,7 +3,7 @@ from .models import usuario, pelicula,Autor
 import unittest
 
 
-def test_peli():
+def test_peli():  # esta funcion permite realizar el testeo de la existencia de la pelicula segun su nombre 
     status = True
     try : 
         testeo = pelicula.objects.values_list('nombre_pelicula')
@@ -12,7 +12,7 @@ def test_peli():
     except : 
         status = False
     return testeo
-def test_autor():
+def test_autor():  # esta funcion permite realizar el testeo de la existencia del autor segun su nombre 
     status = True
     try : 
         testeando = Autor.objects.values_list('nombre_author')
@@ -22,7 +22,7 @@ def test_autor():
         status = False
     return testeando
 
-def test_usuario():
+def test_usuario(): # esta funcion permite realizar el testeo de la existencia del usuario segun su nombre 
     status = True
     try : 
         testeador = usuario.objects.values_list('nombre')

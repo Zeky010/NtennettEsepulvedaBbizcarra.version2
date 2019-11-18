@@ -19,80 +19,77 @@ def index(request):
         context={'num_pelis':num_pelis, 'num_autores':num_autores},
     )
 
-class peliculaCreateView(CreateView):
-    model=pelicula
+class peliculaCreateView(CreateView):    # esta clase permite crear peliculas en la base de datos
+    model=pelicula 
     fields = '__all__'
 
-class peliculaListView(generic.ListView):
+class peliculaListView(generic.ListView):  # esta clase permite listar las  peliculas de la base de datos
     model = pelicula
     paginate_by = 30
    
 
     
-class peliculaDetailView(generic.DetailView):
+class peliculaDetailView(generic.DetailView):  # esta clase permite mostrar el detalle de las peliculas 
     model = pelicula
 
 
-class peliculaUpdate(UpdateView):
+class peliculaUpdate(UpdateView):  # esta clase permite actualizar peliculas en la base de datos
     model=pelicula
     fields=['nombre_pelicula', 'autor', 'descripcion', 'genero']
     
-class peliculaDelete(DeleteView):
+class peliculaDelete(DeleteView):  # esta clase permite eliminar peliculas en la base de datos
     model=pelicula
     success_url = reverse_lazy('peliculas')
     
-class autorDetailView(generic.DetailView):
+class autorDetailView(generic.DetailView):  # esta clase permite mostrar el detalle de los autores de la base de datos
     model = Autor
     
-class autorCreate(CreateView):
+class autorCreate(CreateView):  # esta clase permite crear autores en la base de datos
     model = Autor
     fields = '__all__'
     
-class autorListView(generic.ListView):
+class autorListView(generic.ListView):  # esta clase permite listar los autores de la base de datos
     model = Autor
     paginate_by = 10
 
 
-class autorUpdate(UpdateView):
+class autorUpdate(UpdateView):  # esta clase permite actualizar autores en la base de datos
     model = Autor
     fields = ['nombre_author','apellido_author','descripcion_autor']
 
-class autorDelete(DeleteView):
+class autorDelete(DeleteView):  # esta clase permite eliminar autores en la base de datos
     model = Autor
     success_url = reverse_lazy('autores')
     
-class usuarioCreateView(CreateView):
+class usuarioCreateView(CreateView):  # esta clase permite crear usuarios en la base de datos
     model = usuario
     fields = '__all__'
 
-class usuarioDetailView(generic.DetailView):
+class usuarioDetailView(generic.DetailView):  # esta clase permite mostrar el detalle de los usuarios de la base de datos
     model = usuario
 
-class usuarioListView(generic.ListView):
+class usuarioListView(generic.ListView):  # esta clase permite listar los usuarios de la base de datos
     model = usuario
     paginate_by = 15
     
-class usuarioUpdate(UpdateView):
+class usuarioUpdate(UpdateView):  # esta clase permite actualizar usuarios en la base de datos
     model = usuario
     fields = ['nombre', 'password', 'email']
 
-class usuarioDelete(DeleteView):
+class usuarioDelete(DeleteView):  # esta clase permite eliminar usuarios en la base de datos
     model = usuario
     success_url = reverse_lazy('usuarios')
     
 
-def pelicula_por_autor(request):
+def pelicula_por_autor(request):  # esta funcion permite filtrar a los autores ingresando su nombre
     status = 'NO_CONTENT'
     list = Autor.objects.all()
     if request.method == 'POST':
         try:
             valor = request.POST.get('nombre_author')
-            # list = Autor.objects.all().filter(nombre_author = valor)
             status = 'SEARCH'
             if Autor.objects.all().filter(nombre_author = valor).exists() == True:
                 list = Autor.objects.all().filter(nombre_author = valor)
-                # f = pelicula.objects.values_list('autor','nombre_pelicula')
-                # print(f)
         except:
             status = 'NOSEARCH'
     variables = {'status': status,

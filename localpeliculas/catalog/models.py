@@ -2,7 +2,7 @@ from django.db import models
 from django.urls import reverse
 import uuid
 
-class usuario(models.Model):
+class usuario(models.Model):  # esta clase permite crear los atributos del usuario
 
 	nombre=models.CharField(max_length=100)
 	password = models.CharField(max_length=100)
@@ -20,7 +20,7 @@ class usuario(models.Model):
 
 		return self.nombre
 
-class Genero(models.Model):
+class Genero(models.Model):  # esta clase añadir un genero a la pelicula en forma de lista 
 	name = models.CharField(max_length=200)
 
 	def get_absolute_url(self):
@@ -29,7 +29,7 @@ class Genero(models.Model):
 		return self.name
 	
 	
-class Autor(models.Model):
+class Autor(models.Model):  # esta clase permite añadir los atributos del autor de las peliculas
 	
 	nombre_author = models.CharField(max_length=50)
 	apellido_author = models.CharField(max_length=50)
@@ -43,7 +43,7 @@ class Autor(models.Model):
 	
 
 
-class pelicula(models.Model):
+class pelicula(models.Model):  # esta clase añadir los atributos de las peliculas que se ingresan
 
 	nombre_pelicula = models.CharField(max_length=200)
 	autor = models.ForeignKey('Autor',on_delete=models.SET_NULL,null=True)
@@ -55,32 +55,3 @@ class pelicula(models.Model):
 
 	def get_absolute_url(self):
 		return reverse("pelicula-detail", args=[str(self.id)])
-"""	
-class PeliculaInstance(models.Model):
-	id = models.UUIDField(primary_key=True,default=uuid.uuid4, help_text= 'id unico de la pelicula')
-	pelicula_inst = models.ForeignKey('pelicula',on_delete=models.SET_NULL, null=True)
-	estreno = models.DateField(null=True,blank=True)
-
-	CATEGORIAS = (
-		('s', 'SERIES'),
-		('n', 'NETFLIX'),
-		('p', 'PELICULAS'),
-		('e', 'ESTRENOS'),
-
-	)
-
-	status = models.CharField(
-		max_length=1,
-		choices=CATEGORIAS,
-		blank=True,
-		default='e',
-		help_text='Que ver !',
-	)
-
-	class Meta:
-		ordering = ['estreno']
-	
-	def __str__(self):
-		return f'{self.id} ({self.pelicula_inst.nombre_pelicula})'
-	
-"""
