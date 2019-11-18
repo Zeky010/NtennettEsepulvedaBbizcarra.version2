@@ -5,10 +5,10 @@
             <li>{{ p.nombre_author }}</li> 
         {% endfor %} 
 
-
     <form method="POST">{% csrf_token %}
         <h2>Ingrese Director</h2>
         <input type="text" nome="nombre_author" id="nombre_author">
         <button type="submit" name="submit">Buscar</button>
+        <button type="submit" name="submit">seleccionar</button>
     </form>
 {% endblock %}

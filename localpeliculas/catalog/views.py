@@ -25,9 +25,8 @@ class peliculaCreateView(CreateView):
 
 class peliculaListView(generic.ListView):
     model = pelicula
-    paginate_by = 10
+    paginate_by = 30
    
-
 
     
 class peliculaDetailView(generic.DetailView):
@@ -84,14 +83,15 @@ class usuarioDelete(DeleteView):
     
 
 def pelicula_por_autor(request):
-    status = 'NOSEARCH'
+    status = 'SEARCH'
     listaA = Autor.objects.all()
     listaP = pelicula.objects.all()
-
+    print(str(Autor.objects.all().filter(nombre_author = 'bacan').exists()))
     if request.method == 'POST':
         valor_campo = request.POST.get('nombre_author')
         try:
-            if Autor.objects.all().filter(nombre_author = valor_campo).exists() == True:
+            print("A")
+            if Autor.objects.all().filter(nombre_author = valor_campo).exists() == False:
                 listaA = Autor.objects.all().filter(nombre_author = valor_campo)
             else :
                 
