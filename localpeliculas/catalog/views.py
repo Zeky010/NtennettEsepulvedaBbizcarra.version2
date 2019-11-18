@@ -80,26 +80,21 @@ class usuarioDelete(DeleteView):
     model = usuario
     success_url = reverse_lazy('usuarios')
     
-    
 
 def pelicula_por_autor(request):
-    status = 'SEARCH'
-    listaA = Autor.objects.all()
-    listaP = pelicula.objects.all()
-    print(str(Autor.objects.all().filter(nombre_author = 'bacan').exists()))
+    status = 'NO_CONTENT'
+    list = Autor.objects.all()
     if request.method == 'POST':
-        valor_campo = request.POST.get('nombre_author')
         try:
-            print("A")
-            if Autor.objects.all().filter(nombre_author = valor_campo).exists() == False:
-                listaA = Autor.objects.all().filter(nombre_author = valor_campo)
-            else :
-                
-                 listaA = Autor.objects.all()
+            valor = request.POST.get('nombre_author')
+            # list = Autor.objects.all().filter(nombre_author = valor)
+            status = 'SEARCH'
+            if Autor.objects.all().filter(nombre_author = valor).exists() == True:
+                list = Autor.objects.all().filter(nombre_author = valor)
+                # f = pelicula.objects.values_list('autor','nombre_pelicula')
+                # print(f)
         except:
             status = 'NOSEARCH'
-        
     variables = {'status': status,
-                 'ListaA': listaA}
-    return render (request, 'catalog/pelicula_por_autor.html', variables)
-
+                 'list': list}
+    return render (request,'catalog/pelicula_por_autor.html',variables)
