@@ -1,5 +1,12 @@
-# NtennettEsepulvedaBbizcarra.version2
+﻿# NtennettEsepulvedaBbizcarra.version2
 nueva version de projecto django
+<<<<<<< HEAD
+=======
+Integrantes:
+Nicolas Tennett
+Edison Sepúlveda
+Bryan Bizcarra
+>>>>>>> 769c622cabc6844067d9b1b1aa2e04dd7a7a9da8
 
 Credenciales Sitio Administrativo
 usuario: administrador
