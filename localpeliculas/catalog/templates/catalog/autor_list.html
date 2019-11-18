@@ -1,8 +1,10 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
+  <div class="title">
     <h1>Lista autores</h1>
-
+  </div>
+  <div class="contentBox">
     {% if autor_list %}
     <ul>
 
@@ -17,4 +19,5 @@
     {% else %}
       <p>There are no peli in the library.</p>
     {% endif %}       
+  </div>
 {% endblock %}

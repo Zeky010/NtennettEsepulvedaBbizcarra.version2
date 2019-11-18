@@ -1,11 +1,12 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
+  <div class="title">
     <h1>pelicula List</h1>
+  </div>
     
+  <div class="contentBox">
     <form method="get" action="{% url 'peliculas' %}">
-
-
       {% if pelicula_list %}
       <ul>
 
@@ -21,5 +22,6 @@
           <p>There are no peli in the library.</p>
       {% endif %} 
 
-    </form>      
+    </form>
+  </div>      
 {% endblock %}

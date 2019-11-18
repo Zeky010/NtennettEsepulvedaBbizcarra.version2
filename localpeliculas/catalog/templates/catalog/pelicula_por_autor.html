@@ -1,14 +1,37 @@
+{% extends "base_generic.html" %}
 {% block content %}
-    <p>{{ status }}</p>
-    <h2>Listado Autor </h2>   
-        {% for p in ListaA %}
-            <li>{{ p.nombre_author }}</li> 
-        {% endfor %} 
 
+    {% if status == 'SEARCH' %}
+        <div>
+            <p>Objeto encontrado satisfactoriamente</p>
+        </div>
+    {% endif %}
 
-    <form method="POST">{% csrf_token %}
-        <h2>Ingrese Director</h2>
-        <input type="text" nome="nombre_author" id="nombre_author">
-        <button type="submit" name="submit">Buscar</button>
+    {% if status == 'NOTSEARCH' %}
+        <div>
+            <p>No se ha encontrado el objeto</p>
+        </div>
+    {% endif %}
+    <div class="title">
+        <h2>Listado Autor</h2>
+    </div>
+    <div class="contentBox">
+    {% for p in list %}
+    <!-- aqui en el for pueden colocar atributos  -->
+        <li>{{ p.nombre_author }}</li> 
+    {% endfor %} 
+    </div>
+    <br>
+    <div class="contentBox">
+    <form method="POST"> {% csrf_token %}
+        <div class="from-group">
+            <label for="lblBuscar">Buscar:</label>
+            <input type="text" name="nombre_author" id="nombre_author" placeholder="ingrese el nombre del autor aqui">
+            <button type="submit" name="submit">Buscar</button>
+        </div>
+    </div>
     </form>
+
+    
+        
 {% endblock %}

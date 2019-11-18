@@ -25,9 +25,8 @@ class peliculaCreateView(CreateView):
 
 class peliculaListView(generic.ListView):
     model = pelicula
-    paginate_by = 10
+    paginate_by = 30
    
-
 
     
 class peliculaDetailView(generic.DetailView):
@@ -81,25 +80,21 @@ class usuarioDelete(DeleteView):
     model = usuario
     success_url = reverse_lazy('usuarios')
     
-    
 
 def pelicula_por_autor(request):
-    status = 'NOSEARCH'
-    listaA = Autor.objects.all()
-    listaP = pelicula.objects.all()
-
+    status = 'NO_CONTENT'
+    list = Autor.objects.all()
     if request.method == 'POST':
-        valor_campo = request.POST.get('nombre_author')
         try:
-            if Autor.objects.all().filter(nombre_author = valor_campo).exists() == True:
-                listaA = Autor.objects.all().filter(nombre_author = valor_campo)
-            else :
-                
-                 listaA = Autor.objects.all()
+            valor = request.POST.get('nombre_author')
+            # list = Autor.objects.all().filter(nombre_author = valor)
+            status = 'SEARCH'
+            if Autor.objects.all().filter(nombre_author = valor).exists() == True:
+                list = Autor.objects.all().filter(nombre_author = valor)
+                # f = pelicula.objects.values_list('autor','nombre_pelicula')
+                # print(f)
         except:
             status = 'NOSEARCH'
-        
     variables = {'status': status,
-                 'ListaA': listaA}
-    return render (request, 'catalog/pelicula_por_autor.html', variables)
-
+                 'list': list}
+    return render (request,'catalog/pelicula_por_autor.html',variables)

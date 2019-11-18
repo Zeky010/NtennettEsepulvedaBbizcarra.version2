@@ -1,9 +1,10 @@
 {% extends "base_generic.html" %}
 {% block content %}
-<h1>Crear pelicula</h1>
-
-  <p>bienvenido <em> a bibliopelis</em> </p>
-
+<div class="title">
+  <h1>Crear pelicula</h1>
+</div>
+  
+<div class="contentBox">
 <form action="" method="post">
     {% csrf_token %}
     <table>
@@ -12,4 +13,5 @@
     <input type="submit" value="Registrar" />
     
 </form>
+</div>
 {% endblock %}
