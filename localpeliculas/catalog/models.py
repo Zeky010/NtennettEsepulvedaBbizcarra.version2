@@ -28,10 +28,13 @@ class Genero(models.Model):
 	def __str__(self):
 		return self.name
 	
+	
 class Autor(models.Model):
 	
 	nombre_author = models.CharField(max_length=50)
-	#edad = models.Integer()
+	apellido_author = models.CharField(max_length=50)
+	descripcion_autor = models.TextField(max_length=1000,help_text='Ingrese informacion del Autor')
+
 	def __str__(self):
 		return self.nombre_author
 	
