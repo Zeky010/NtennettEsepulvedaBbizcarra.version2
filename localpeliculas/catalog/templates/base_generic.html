@@ -28,9 +28,17 @@
         <li><a href="{% url 'autores' %}">Todos los autores</a></li>
         <li><a href="{% url 'usuario_list' %}">Todos los usuarios del sitio</a></li>
         <li><a href="{% url 'pelicula_por_autor' %}">Filtrar por Autor</a></li>
-
         
 
+    </ul>
+    <ul class="sidebar-nav">
+
+      {% if user.is_authenticated %}
+        <li>User: {{ user.get_username }}</li>
+        <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>   
+      {% else %}
+        <li><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>   
+      {% endif %} 
     </ul>
     {% endblock %}
   </div>
