@@ -1,18 +1,9 @@
 ﻿# NtennettEsepulvedaBbizcarra.version2
-nueva version de projecto django
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> origin/probando-imagenes
+
 Integrantes:
 Nicolas Tennett
 Edison Sepúlveda
 Bryan Bizcarra
-<<<<<<< HEAD
-=======
->>>>>>> 769c622cabc6844067d9b1b1aa2e04dd7a7a9da8
->>>>>>> origin/probando-imagenes
 
 Credenciales Sitio Administrativo
 usuario: administrador
