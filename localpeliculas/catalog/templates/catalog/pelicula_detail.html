@@ -13,9 +13,11 @@
 
     <p><strong>Genero:</strong> {{ pelicula.genero.all|join:", " }}</p>
 </div>
-
+{% if request.user.is_staff %}
 <div style="margin-left:20px;margin-top:20px">
     <a style="padding=30px" href="delete/">Eliminar</a>
     <a href="update/">Actualizar</a>
 </div>
+{% endif %}
+ <h3>Usuario sin privilegios de administrador</h3>
 {% endblock %}
