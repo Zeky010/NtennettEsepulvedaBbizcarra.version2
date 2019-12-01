@@ -4,8 +4,9 @@
 <div class="title">
   <h1>Crear Autor</h1>
 </div>
-{% if request.user.is_staff %}
+
 <div class="contentBox">
+    {% if request.user.is_staff %}
   <form action="" method="post">
       {% csrf_token %}
       <table>
