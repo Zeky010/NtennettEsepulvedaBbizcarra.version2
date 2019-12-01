@@ -15,12 +15,12 @@
 </head>
 <body>
 
-<div class="container-fluid">
+<div>
 
-<div class="row">
-  <div class="col-sm-2">
+<div class="row" >
+  <div class="col-sm-2"  style="border-right: 4px  double;">
     {% block sidebar %}
-    <ul class="sidebar-nav">
+    <ul class="sidebar-nav" class="container-fluid">
         <li><a href="{% url 'index' %}">Home</a></li>
         <li><a href="{% url 'peliculas' %}">Todas las peliculas</a></li>
         <li><a href="{% url 'pelicula-create' %}">Añadir Pelicula</a></li>
