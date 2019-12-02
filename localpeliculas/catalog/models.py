@@ -2,7 +2,7 @@ from django.db import models
 from django.urls import reverse
 import uuid
 
-class usuario(models.Model):  # esta clase permite crear los atributos del usuario
+class usuario(models.Model):  # esta clase permite crear los atributos del usuario.
 
 	nombre=models.CharField(max_length=100)
 	password = models.CharField(max_length=100)

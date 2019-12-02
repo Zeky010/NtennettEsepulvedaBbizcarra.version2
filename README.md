@@ -9,6 +9,17 @@ Credenciales Sitio Administrativo
 usuario: administrador
 contraseña: bibliopelis
 
+Credenciales pythonanywhere
+usuario : bibliopeliculas
+contraseña : teneto94
+sitio host : http://bibliopeliculas.pythonanywhere.com/
+
+credenciales sitio biblipeliculas
+usuario administrador : administrador
+contraseña : bibliopelis
+usuario sin privilegios : User ( U con mayuscula)
+contraseña : bibliopelis
+
 Esta pagina web abarca la informacion referente a biblioteca de peliculas en la cual existen opciones tales como crear usuarios, peliculas y autores de peliculas. Ademas permite eliminar y actualizar informacion de los autores, películas y usuarios. Tambien existe un filtro que permite distinguir un Autor de otro al momento de ingresar su nombre y buscarlo. Por otro lado, el sitio permite ver listas con todos los autores de las peliculas, todas las peliculas existentes en la pagina y todos los usuarios de esta misma. 
 
 Ademas existen tres Pruebas unitarias la cuales realizan un testeo de las peliculas, los autores y los usuarios existentes en la base de datos, comprobando su correcto funcionamiento.
